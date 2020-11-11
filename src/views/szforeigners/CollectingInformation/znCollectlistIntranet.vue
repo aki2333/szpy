@@ -8,12 +8,12 @@
     </Inquire>
     <div class="t-tab-top">
     
-      <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='0' && cx.pd.checkStatus=='1')?'tabImgActive_1':'tabImg_1'" @click="tabTopClick('0','1')">全部待接收</div>
-      <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='0' && cx.pd.checkStatus=='2')?'tabImgActive_2':'tabImg_2'" @click="tabTopClick('0','2')">全部待处理</div>
-      <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='0' && cx.pd.checkStatus=='3')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('0','3')">全部已处理</div>
-      <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='1' && cx.pd.checkStatus=='1')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('1','1')">本人任务</div>
-      <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='1' && cx.pd.checkStatus=='2')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('1','2')">本人待处理</div>
-      <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='1' && cx.pd.checkStatus=='3')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('1','3')">本人已处理</div>
+      <div class="tab-top-item hand" :class="(tabPage=='0')?'tabImgActive_1':'tabImg_1'" @click="tabTopClick('0');tabPage='0'">数据查询</div>
+      <!-- <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='0' && cx.pd.checkStatus=='2')?'tabImgActive_2':'tabImg_2'" @click="tabTopClick('0','2')">全部待处理</div>
+      <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='0' && cx.pd.checkStatus=='3')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('0','3')">全部已处理</div> -->
+      <div class="tab-top-item hand" :class="(tabPage=='1')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('1');tabPage='1'">待接收</div>
+      <div class="tab-top-item hand" :class="(tabPage=='2')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('1');tabPage='2'">待处理</div>
+      <div class="tab-top-item hand" :class="(tabPage=='3')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('1');tabPage='3'">已处理</div>
     </div>
     <div class="page-box">
       <el-row :gutter="20">
@@ -86,6 +86,7 @@ export default {
   data() {
     return {
       tabImgActive_1: require("../../../assets/images/main/tab_2_pre.png"),
+      tabPage:'0',
       // 【展示数据】
       isSelect: true,
       isEdit: true,
@@ -137,7 +138,7 @@ export default {
   },
   mounted() {
     this.cx.queryParams = this.cx.pd;
-    this.tabTopClick('0','1');
+    this.tabTopClick('0');
     this.getTable();
     // this.begin();
 
@@ -160,9 +161,9 @@ export default {
         this.$store.dispatch("aGetssdw", { bmbh: data.data, type: "sspcs" });
       }
     },
-    tabTopClick(m,n){
+    tabTopClick(m){
        this.cx.pd.compareStatus = m;
-       this.cx.pd.checkStatus=n;
+      //  this.cx.pd.checkStatus=n;
        this.cx.pageNum = 1;
        this.plBtn = this.$store.state.plBtn;
        if(this.cx.pd.compareStatus=='0' && this.cx.pd.checkStatus=='1') {
@@ -231,7 +232,6 @@ export default {
       if(this.cx.pageSize!=this.tableData.pageSize){
         this.cx.pageSize=this.tableData.pageSize
       }
-      
       if(flag){this.clearSort = new Date().getTime();delete this.cx.order;delete this.cx.direction }
       this.$api.post(
         this.$api.aport5 + "/znCollectlistIntranet/listData",
@@ -536,4 +536,4 @@ export default {
   
   }
 };
-</script>
+</script>       

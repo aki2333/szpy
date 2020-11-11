@@ -76,6 +76,12 @@ const znCollectlistIntranet = {
         //     dm: 'taskStatus',
         //     optype: true
         // },
+        {
+            cm: '数据状态',
+            type: 'select',
+            dm: 'checkStatus',
+            optype:true,
+        },
     ],
     // 列表项
     lb: [
