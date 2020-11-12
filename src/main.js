@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import ElementUI from 'element-ui';
+import ElementUI from 'element-ui'
 import '../theme/index.css'
 import router from './router'
 import store from './store'
@@ -8,8 +8,8 @@ import api from './api/index.js'
 import http from './request/api.js'
 import fnc from './base/fnc.js'
 import cdata from './base/cdata.js'
-import echarts from "echarts";
-import vcolorpicker from 'vcolorpicker'
+import echarts from "echarts"
+import vcolorpicker from "vcolorpicker"
 import './assets/icon/iconfont.css'
 import './assets/icon/iconfont.js'
 

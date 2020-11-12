@@ -127,6 +127,7 @@ export default new Vuex.Store({
       window.sessionStorage.setItem("bread", JSON.stringify(data));
     },
     getPlBtn(state, data) {
+      //把data中的值给state中的plBtn变量
       state.plBtn = data;
       window.sessionStorage.setItem("plBtn", JSON.stringify(data));
     },

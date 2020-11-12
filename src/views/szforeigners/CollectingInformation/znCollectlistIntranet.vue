@@ -7,7 +7,6 @@
       @lcFnc="lcFnc">
     </Inquire>
     <div class="t-tab-top">
-    
       <div class="tab-top-item hand" :class="(tabPage=='0')?'tabImgActive_1':'tabImg_1'" @click="tabTopClick('0');tabPage='0'">数据查询</div>
       <!-- <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='0' && cx.pd.checkStatus=='2')?'tabImgActive_2':'tabImg_2'" @click="tabTopClick('0','2')">全部待处理</div>
       <div class="tab-top-item hand" :class="(cx.pd.compareStatus=='0' && cx.pd.checkStatus=='3')?'tabImgActive_2':'tabImg_2'" style="margin-left:-18px" @click="tabTopClick('0','3')">全部已处理</div> -->

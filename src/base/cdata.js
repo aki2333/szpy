@@ -1,3 +1,5 @@
+
+//引入子组件
 import qxgl from './modules/qxgl.js'
 import zxhc from './modules/zxhc.js'
 import lzsb from './modules/lzsb.js'

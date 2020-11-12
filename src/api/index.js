@@ -25,6 +25,7 @@ var aport6 = "http://50.73.70.116:1101/szforeigners/static"//采集系统图片�
 // var aport6 = "http://192.168.3.100:8001/static" // 图片服务器
 // 引用axios
 import axios from 'axios';
+// @代表当前src目录下stroe
 import store from '@/store'
 import router from '@/router'
 import fnc from '../base/fnc.js'
@@ -106,7 +107,7 @@ function apiAxios(method, url, params, success, failure, isDownload,type,name) {
         if (loadingInstance1) {
           loadingInstance1.close();
         }
-        console.log("isDownload", isDownload,name)
+        // console.log("isDownload", isDownload,name)
         if (isDownload) {
           let url = window.URL.createObjectURL(new Blob([res.data]));
           // 生成一个a标签

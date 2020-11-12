@@ -213,6 +213,7 @@ const znCollectlistIntranet = {
             dm: 'lrrq'
         },
     ],
+        
     lbBtn: [
         {
             "button_name": "详情",
