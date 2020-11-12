@@ -94,7 +94,7 @@ export default {
       lbBtn: this.$cdata.foreigners.znCollectlistIntranet.lbBtn,
       plBtn: this.$store.state.plBtn,
       hct:0,
-      // 【业务数据】
+      // 【查询业务数据】
       cx: {
         pd: { userType: "0", valid: "1",compareStatus:'0', checkStatus:'1'},
         pageSize: 10,
